@@ -11,12 +11,12 @@ export default function(el, options) {
     return Math.min(Math.max(this, min), max);
   };
 
-  let opts = _.defaultsDeep({
+  let opts = _.defaultsDeep(options, {
     fadeStart: 0,
     fadeEnd: 1,
     fadeEasing: 'linear',
     fadeDuration: '100vh'
-  }, options);
+  });
 
   /**
    * Since this is an interactively-controlled animation,
