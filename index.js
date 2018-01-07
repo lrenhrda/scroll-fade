@@ -6,13 +6,17 @@ import anime from 'animejs';
 import getCSSUnit from 'css-get-unit';
 
 export default function(el, options) {
-  
+
+  Number.prototype.clamp = function(min, max) {
+    return Math.min(Math.max(this, min), max);
+  };
+
   let opts = _.defaultsDeep({
     fadeStart: 0,
     fadeEnd: 1,
     fadeEasing: 'linear',
     fadeDuration: '100vh'
-  }, options)
+  }, options);
 
   /**
    * Since this is an interactively-controlled animation,
