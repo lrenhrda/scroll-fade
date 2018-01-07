@@ -1,0 +1,12 @@
+{
+  "name": "scroll-fade",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lauren Herda <lauren@herda.me>",
+  "license": "MIT",
+  "dependencies": {
+    "animejs": "^2.2.0",
+    "css-get-unit": "^1.0.1",
+    "lodash": "^4.17.4"
+  }
+}
