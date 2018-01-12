@@ -11,7 +11,7 @@ exports.default = function (el, options) {
     return Math.min(Math.max(this, min), max);
   };
 
-  var opts = _.defaultsDeep(options, {
+  var opts = (0, _lodash4.default)(options, {
     fadeStart: 0,
     fadeEnd: 1,
     fadeEasing: 'linear',
@@ -45,7 +45,7 @@ exports.default = function (el, options) {
     return (scroll / max).clamp(0, 1);
   };
 
-  var tick = _.throttle(function () {
+  var tick = (0, _lodash2.default)(function () {
     anim.seek(anim.duration * getPosition());
   }, 10);
 
@@ -54,9 +54,13 @@ exports.default = function (el, options) {
   window.addEventListener('resize', tick, false);
 };
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.throttle');
 
-var _ = _interopRequireWildcard(_lodash);
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _lodash3 = require('lodash.defaultsDeep');
+
+var _lodash4 = _interopRequireDefault(_lodash3);
 
 var _animejs = require('animejs');
 
@@ -67,7 +71,5 @@ var _cssGetUnit = require('css-get-unit');
 var _cssGetUnit2 = _interopRequireDefault(_cssGetUnit);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 ;

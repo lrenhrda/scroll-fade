@@ -1,7 +1,8 @@
 // scrollfade.js
 'use strict';
 
-import * as _ from 'lodash';
+import throttle from 'lodash.throttle';
+import defaultsDeep from 'lodash.defaultsDeep'
 import anime from 'animejs';
 import getCSSUnit from 'css-get-unit';
 
@@ -11,7 +12,7 @@ export default function(el, options) {
     return Math.min(Math.max(this, min), max);
   };
 
-  let opts = _.defaultsDeep(options, {
+  let opts = defaultsDeep(options, {
     fadeStart: 0,
     fadeEnd: 1,
     fadeEasing: 'linear',
@@ -45,7 +46,7 @@ export default function(el, options) {
     return (scroll / max).clamp(0, 1);
   };
 
-  let tick = _.throttle(()=> {
+  let tick = throttle(()=> {
     anim.seek(anim.duration * getPosition());
   }, 10);
 
