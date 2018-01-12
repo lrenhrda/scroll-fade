@@ -6,7 +6,12 @@
   "license": "MIT",
   "dependencies": {
     "animejs": "^2.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "css-get-unit": "^1.0.1",
     "lodash": "^4.17.4"
-  }
+  },
+   "scripts": {
+     "build": "babel scroll-fade.babel.js --out-file index.js --presets=env"
+   }
 }
