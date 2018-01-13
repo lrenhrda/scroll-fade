@@ -9,10 +9,10 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "css-get-unit": "^1.0.1",
-    "lodash.throttle": "^4.17.4",
-    "lodash.defaultsDeep": "^4.17.4"
+    "lodash.defaultsdeep": "^4.6.0",
+    "lodash.throttle": "^4.1.1"
   },
-   "scripts": {
-     "build": "babel scroll-fade.babel.js --out-file index.js --presets=env"
-   }
+  "scripts": {
+    "build": "babel scroll-fade.babel.js --out-file index.js --presets=env"
+  }
 }
