@@ -1,7 +1,7 @@
 {
   "name": "scroll-fade",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/ScrollFade.js",
   "author": "Lauren Herda <lauren@herda.me>",
   "license": "MIT",
   "dependencies": {
@@ -13,6 +13,11 @@
     "lodash.throttle": "^4.1.1"
   },
   "scripts": {
-    "build": "babel scroll-fade.babel.js --out-file index.js --presets=env"
+    "build": "babel es6 --presets babel-preset-env --out-dir dist",
+    "buildTest": "webpack"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "webpack": "^3.10.0"
   }
 }

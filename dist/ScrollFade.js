@@ -11,7 +11,7 @@ exports.default = function (el, options) {
     return Math.min(Math.max(this, min), max);
   };
 
-  var opts = (0, _lodash4.default)(options, {
+  var opts = (0, _lodash4.default)(el.dataset, options, {
     fadeStart: 0,
     fadeEnd: 1,
     fadeEasing: 'linear',
@@ -23,15 +23,20 @@ exports.default = function (el, options) {
    * duration is not based on a length of time but on a
    * distance of pixels.
    */
-  var unit = (0, _cssGetUnit2.default)(el.dataset.fadeDuration || opts.fadeDuration);
-  var value = parseFloat(el.dataset.fadeDuration || opts.fadeDuration);
+  function parseUnit(n) {
+    var unit = (0, _cssGetUnit2.default)(n);
+    var value = parseFloat(n);
+    return { unit: unit, value: value };
+  }
 
   // Convert the duration value to a physical pixel size:
-  var max = value;
-  if (unit == '%') max = value / 100 * document.body.clientHeight;
-  if (unit == 'vh') max = value / 100 * window.innerHeight;
-  if (unit == 'px') max = value;
+  var fadeDuration = parseUnit(opts.fadeDuration);
+  var max = fadeDuration.value;
+  if (fadeDuration.unit == '%') max = fadeDuration.value / 100 * document.body.clientHeight;
+  if (fadeDuration.unit == 'vh') max = fadeDuration.value / 100 * window.innerHeight;
+  if (fadeDuration.unit == 'px') max = fadeDuration.value;
 
+  // TODO: Add delay functionality
   var anim = (0, _animejs2.default)({
     targets: el,
     opacity: [opts.fadeStart, opts.fadeEnd],
@@ -42,6 +47,7 @@ exports.default = function (el, options) {
 
   function getPosition() {
     var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    // console.log('scroll:', scroll, 'max:', max);
     return (scroll / max).clamp(0, 1);
   };
 
@@ -58,7 +64,7 @@ var _lodash = require('lodash.throttle');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _lodash3 = require('lodash.defaultsDeep');
+var _lodash3 = require('lodash.defaultsdeep');
 
 var _lodash4 = _interopRequireDefault(_lodash3);
 
