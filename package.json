@@ -12,6 +12,10 @@
     "lodash.defaultsdeep": "^4.6.0",
     "lodash.throttle": "^4.1.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:lrenhrda/scroll-fade.git"
+  },
   "scripts": {
     "build": "babel es6 --presets babel-preset-env --out-dir dist",
     "buildTest": "webpack"
