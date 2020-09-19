@@ -1,6 +1,6 @@
 {
   "name": "scroll-fade",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/ScrollFade.js",
   "author": "Lauren Herda <lauren@herda.me>",
   "license": "MIT",
