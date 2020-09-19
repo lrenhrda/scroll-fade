@@ -1,6 +1,6 @@
 {
   "name": "scroll-fade",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/ScrollFade.js",
   "author": "Lauren Herda <lauren@herda.me>",
   "license": "MIT",
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "build": "babel es6 --presets babel-preset-env --out-dir dist",
-    "buildTest": "webpack"
+    "buildDemo": "webpack"
   },
   "devDependencies": {
     "babel-loader": "^7.1.2",

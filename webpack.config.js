@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './es6/test.js',
+  entry: './es6/demo.js',
   devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'test'),
+    path: path.resolve(__dirname, 'demo'),
     filename: 'bundle.js'
   },
   module: {
