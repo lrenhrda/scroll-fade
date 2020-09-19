@@ -6,8 +6,6 @@
   "license": "MIT",
   "dependencies": {
     "animejs": "^2.2.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "css-get-unit": "^1.0.1",
     "lodash.defaultsdeep": "^4.6.0",
     "lodash.throttle": "^4.1.1"
@@ -21,6 +19,8 @@
     "buildDemo": "webpack"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "babel-loader": "^7.1.2",
     "webpack": "^3.10.0"
   }
