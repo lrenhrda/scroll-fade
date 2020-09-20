@@ -5,7 +5,7 @@
   "author": "Lauren Herda <lauren@herda.me>",
   "license": "MIT",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "animejs": "^2.2.0",
